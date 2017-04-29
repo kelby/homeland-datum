@@ -1,0 +1,31 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>Homeland paper</title>
+  <%#= stylesheet_link_tag    "homeland/paper/application", media: "all" %>
+  <%#= javascript_include_tag "homeland/paper/application" %>
+  <%#= csrf_meta_tags %>
+</head>
+<body>
+
+<%#= yield %>
+
+</body>
+</html>
+ -->
+
+<% content_for :stylesheets do %>
+  <%= stylesheet_link_tag    "homeland/paper/application", media: "all" %>
+<% end %>
+
+<% content_for :javascripts do %>
+  <%= javascript_include_tag "homeland/paper/application" %>
+<% end %>
+
+<% content_for :main do %>
+  <div id="homeland-papers">
+    <%= yield %>
+  </div>
+<% end %>
+
+<%= render template: "/layouts/application" %>
